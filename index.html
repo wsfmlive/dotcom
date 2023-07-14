@@ -76,13 +76,13 @@
         const images = document.querySelectorAll('img');
         
         function handleImageClick() {
-            // Remove 'active' class from all images
+            // Remove 'disabled' class from all images
             images.forEach(image => {
-                image.classList.remove('active');
+                image.classList.remove('disabled');
             });
 
-            // Add 'active' class to the clicked image
-            this.classList.add('active');
+            // Add 'disabled' class to the clicked image
+            this.classList.add('disabled');
 
             // Get the data-id value of the clicked image
             const dataId = this.getAttribute('data-id');
