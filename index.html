@@ -42,14 +42,27 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="image-video">
-                        <a href="https://wsfm.live/f1/3204/full-race-formula-1-british-grand-prix-2023-07-09-july-2023/" title="Formula 1 British Grand Prix 2023 07-09 July 2023">
-                            <img src="https://i.ibb.co/TcKkgNr/Formula-1-British-GP-Practice-1-July-07-2023.webp" alt="Formula 1 British Grand Prix 2023 07-09 July 2023" class="img-fluid">
-                        </a>
+                        <h1 class="display-6 fw-bold">Full Race Video Replay Of Formula 1 British Grand Prix 2023 07-09 July 2023</h1>
 
                         <div class="my-4"></div>
 
-                        <h1 class="display-6 fw-bold">Full Race Video Replay Of Formula 1 British Grand Prix 2023 07-09 July 2023</h1>
+                        <div class="ratio ratio-16x9">
+                            <iframe id="videoFrame" frameborder="0" src="https://www.dailymotion.com/embed/video/x8mf4m5?autoplay=1" allow="autoplay" allowfullscreen data-id="MainVideo"></iframe>
+                        </div>
                         
+                        <div class="my-4"></div>
+
+                        <div class="row g-4">
+                            <div class="col-lg-6">
+                                <img class="img-fluid" src="01.webp" data-id="1">
+                            </div>
+
+                            <div class="col-lg-6">
+                                <img class="img-fluid" src="02.webp" data-id="2">
+                            </div>
+                            
+                        </div>
+
                         <div class="my-4"></div>
 
                         <a class="btn btn-lg btn-primary" href="https://wsfm.live/f1/3204/full-race-formula-1-british-grand-prix-2023-07-09-july-2023/" title="Formula 1 British Grand Prix 2023 07-09 July 2023">Watch The Full Race</a>
@@ -60,6 +73,39 @@
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <script>
+        const images = document.querySelectorAll('img');
+        
+        function handleImageClick() {
+            // Remove 'active' class from all images
+            images.forEach(image => {
+                image.classList.remove('active');
+            });
+
+            // Add 'active' class to the clicked image
+            this.classList.add('active');
+
+            // Get the data-id value of the clicked image
+            const dataId = this.getAttribute('data-id');
+
+            // Define the source URLs for different data IDs
+            const sourceURLs = {
+                1: 'https://www.dailymotion.com/embed/video/x8m5lwh?autoplay=1',
+                2: 'https://filemoon.sx/e/m49spa10p1ri/F1-RACE-British-GP-July-09-2023'
+            };
+
+            // Get the iframe source based on the data-id
+            const iframeSrc = sourceURLs[dataId];
+
+            // Change the iframe source
+            const iframe = document.getElementById('videoFrame');
+            iframe.src = iframeSrc;
+        }
+
+        // Attach a click event listener to each image
+        images.forEach(image => {
+            image.addEventListener('click', handleImageClick);
+        });
+        
         WebFontConfig = {
             google: {
                 families: ['Plus+Jakarta+Sans:ital,wght@0,400;0,700;0,800;1,400;1,700;1,800']
